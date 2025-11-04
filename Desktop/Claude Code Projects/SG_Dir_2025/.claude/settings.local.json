@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth status:*)",
+      "Bash(gh repo create:*)",
+      "Bash(cd:*)",
+      "Bash(git rm --cached -r ../ecompics/)",
+      "Bash(git commit -m \"Remove scope contamination: parent ecompics directory files no longer tracked\")",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

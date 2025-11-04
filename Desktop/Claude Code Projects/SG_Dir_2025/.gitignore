@@ -1,0 +1,46 @@
+# System files
+.DS_Store
+.env
+.env.local
+.env.*.local
+node_modules/
+dist/
+build/
+.turbo/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+Thumbs.db
+*.pem
+*.key
+
+# Next.js
+.next/
+out/
+
+# Supabase local
+.supabase/
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
+*.pid
+*.seed
