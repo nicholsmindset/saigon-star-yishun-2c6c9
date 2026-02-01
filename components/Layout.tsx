@@ -27,9 +27,9 @@ const Navbar: React.FC = () => {
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass-effect shadow-sm py-3' : 'bg-transparent py-6'}`}>
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-serif font-bold tracking-widest text-brand-dark flex items-center gap-2">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'glass-effect shadow-sm py-2 sm:py-3' : 'bg-transparent py-4 sm:py-6'}`}>
+      <div className="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <Link to="/" className="text-xl sm:text-2xl font-serif font-bold tracking-widest text-brand-dark flex items-center gap-1 sm:gap-2 shrink-0">
           <span className="text-brand-gold italic">Saigon</span>
           <span className="hidden sm:inline font-light text-sm uppercase tracking-[0.2em] pt-1">Star Yishun</span>
         </Link>
@@ -62,38 +62,40 @@ const Navbar: React.FC = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-0 bg-brand-nude z-40 transition-transform duration-500 transform ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col items-center justify-center h-full space-y-8 text-center px-6">
-          <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-6 right-6 p-2">
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
-          </button>
-          {navLinks.map((link) => (
+      {isMobileMenuOpen && (
+        <div className="lg:hidden fixed inset-0 bg-brand-nude z-[60] transition-transform duration-500 transform translate-x-0">
+          <div className="flex flex-col items-center justify-center h-full space-y-6 text-center px-6">
+            <button onClick={() => setIsMobileMenuOpen(false)} className="absolute top-4 right-4 p-3 z-[70]">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-xl sm:text-2xl font-serif text-brand-dark hover:text-brand-gold py-1"
+              >
+                {link.name}
+              </Link>
+            ))}
             <Link
-              key={link.path}
-              to={link.path}
+              to="/booking"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="text-2xl font-serif text-brand-dark hover:text-brand-gold"
+              className="w-full max-w-xs bg-brand-gold text-white py-4 text-sm uppercase tracking-widest font-bold text-center block mt-4"
             >
-              {link.name}
+              Book Appointment
             </Link>
-          ))}
-          <Link 
-            to="/booking" 
-            onClick={() => setIsMobileMenuOpen(false)}
-            className="w-full max-w-xs bg-brand-gold text-white py-4 text-sm uppercase tracking-widest font-bold"
-          >
-            Book Appointment
-          </Link>
+          </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
 
 const Footer: React.FC = () => (
-  <footer className="bg-brand-dark text-white pt-20 pb-10">
-    <div className="container mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+  <footer className="bg-brand-dark text-white pt-12 sm:pt-20 pb-24 lg:pb-10">
+    <div className="container mx-auto px-4 sm:px-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12 sm:mb-16">
         <div>
           <h2 className="text-2xl font-serif font-bold mb-6 tracking-widest text-brand-gold italic">Saigon Star</h2>
           <p className="text-brand-blush/70 text-sm leading-relaxed mb-6">
@@ -170,7 +172,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
-      <main className="flex-grow pt-0">
+      <main className="flex-grow pt-0 pb-20 lg:pb-0">
         {children}
       </main>
       <Footer />
@@ -180,17 +182,17 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
         href={getWhatsAppBookingLink()}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-24 right-6 lg:bottom-10 lg:right-10 z-50 bg-green-500 text-white p-3 rounded-full shadow-2xl hover-lift"
+        className="fixed bottom-28 right-4 lg:bottom-10 lg:right-10 z-40 bg-green-500 text-white p-3 rounded-full shadow-2xl hover-lift"
         aria-label="WhatsApp Booking"
       >
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-2.296 0-4.289 1.583-4.834 3.955-.024.113-.147.214-.242.214H5.416c-.292 0-.528.236-.528.528v.241c0 .292.236.528.528.528h1.539c.095 0 .218.101.242.214.545 2.372 2.538 3.955 4.834 3.955 2.296 0 4.289-1.583 4.834-3.955.024-.113.147-.214.242-.214h1.539c.292 0 .528-.236.528-.528v-.241c0-.292-.236-.528-.528-.528h-1.539c-.095 0-.218-.101-.242-.214-.545-2.372-2.538-3.955-4.834-3.955z"/><path d="M12.012 2c-5.514 0-10 4.486-10 10s4.486 10 10 10c1.855 0 3.584-.509 5.062-1.402l4.926 1.402-1.402-4.926c.893-1.478 1.402-3.207 1.402-5.062 0-5.514-4.486-10-10-10zm0 18.286c-1.637 0-3.178-.457-4.499-1.25l-.323-.195-3.337.95.95-3.337-.195-.323c-.793-1.321-1.25-2.862-1.25-4.499 0-4.568 3.718-8.286 8.286-8.286s8.286 3.718 8.286 8.286-3.718 8.286-8.286 8.286z"/></svg>
       </a>
 
       {/* Sticky Bottom Booking for Mobile */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 glass-effect p-4 border-t border-brand-accent/30">
-        <Link 
-          to="/booking" 
-          className="block w-full bg-brand-gold text-white text-center py-4 text-xs uppercase tracking-widest font-bold"
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md p-3 border-t border-brand-accent/30 safe-area-bottom">
+        <Link
+          to="/booking"
+          className="block w-full bg-brand-gold text-white text-center py-3.5 text-xs uppercase tracking-widest font-bold rounded-sm"
         >
           Book Now
         </Link>

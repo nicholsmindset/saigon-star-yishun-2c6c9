@@ -3,19 +3,19 @@ import { BUSINESS_CONFIG } from '../config/business';
 
 const TermsOfService: React.FC = () => {
   return (
-    <div className="bg-brand-nude pt-32 pb-24 min-h-screen">
-      <div className="container mx-auto px-6 max-w-4xl">
-        <header className="text-center mb-16">
-          <span className="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">
+    <div className="bg-brand-nude pt-24 sm:pt-32 pb-12 sm:pb-24 min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
+        <header className="text-center mb-10 sm:mb-16">
+          <span className="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-3 sm:mb-4 block">
             Legal Information
           </span>
-          <h1 className="text-5xl font-serif text-brand-dark mb-6">Terms of Service</h1>
+          <h1 className="text-3xl sm:text-5xl font-serif text-brand-dark mb-4 sm:mb-6">Terms of Service</h1>
           <p className="text-brand-dark/60 text-sm">
             Last Updated: February 1, 2026
           </p>
         </header>
 
-        <div className="bg-white p-12 shadow-lg space-y-8 text-brand-dark/80">
+        <div className="bg-white p-5 sm:p-12 shadow-lg space-y-6 sm:space-y-8 text-brand-dark/80">
           <section>
             <h2 className="text-2xl font-serif text-brand-dark mb-4">1. Acceptance of Terms</h2>
             <p className="leading-relaxed">
