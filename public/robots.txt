@@ -1,0 +1,37 @@
+# robots.txt for Saigon Star Yishun
+# https://saigonstar.sg/robots.txt
+
+# Allow all search engines to crawl the entire site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://saigonstar.sg/sitemap.xml
+
+# Crawl-delay for good behavior (optional)
+Crawl-delay: 1
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to admin/backend if added later
+# Disallow: /admin/
+# Disallow: /api/
+
+# Allow access to CSS, JS, and images for proper rendering
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$

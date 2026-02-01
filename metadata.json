@@ -1,0 +1,7 @@
+{
+  "name": "Saigon Star Yishun",
+  "description": "Premium lash and nail artistry studio in Yishun Street 22, specializing in bespoke nail art and professional eyelash extensions.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
