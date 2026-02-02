@@ -146,14 +146,14 @@ const Booking: React.FC = () => {
   };
 
   return (
-    <div className="bg-brand-nude pt-32 pb-24 min-h-screen">
-      <div className="container mx-auto px-6 max-w-2xl">
-        <div className="bg-white shadow-2xl p-8 md:p-12 relative overflow-hidden">
+    <div className="bg-brand-nude pt-24 sm:pt-32 pb-12 sm:pb-24 min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6 max-w-2xl">
+        <div className="bg-white shadow-2xl p-5 sm:p-8 md:p-12 relative overflow-hidden">
           {/* Progress Bar */}
           <div className="absolute top-0 left-0 h-1 bg-brand-gold transition-all duration-500" style={{ width: `${(step / 4) * 100}%` }}></div>
           
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-sm font-bold uppercase tracking-[0.3em] text-brand-gold">Online Concierge</h2>
+          <div className="flex justify-between items-center mb-8 sm:mb-12">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-[0.15em] sm:tracking-[0.3em] text-brand-gold">Online Concierge</h2>
             <span className="text-[10px] text-brand-dark/30 font-bold uppercase tracking-widest">Step {step} / 4</span>
           </div>
 

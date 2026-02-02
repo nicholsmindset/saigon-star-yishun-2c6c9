@@ -58,17 +58,17 @@ const Gallery: React.FC = () => {
   const filtered = filter === 'All' ? PORTFOLIO_IMAGES : PORTFOLIO_IMAGES.filter(i => i.type === filter);
 
   return (
-    <div className="bg-brand-nude pt-32 pb-24 min-h-screen">
-      <div className="container mx-auto px-6">
-        <header className="text-center mb-16">
-          <span className="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-4 block">Visual Excellence</span>
-          <h1 className="text-5xl font-serif text-brand-dark mb-6 tracking-tight">Curated Showcase</h1>
-          <p className="text-brand-dark/50 max-w-xl mx-auto text-sm font-light mb-10">
+    <div className="bg-brand-nude pt-24 sm:pt-32 pb-12 sm:pb-24 min-h-screen">
+      <div className="container mx-auto px-4 sm:px-6">
+        <header className="text-center mb-10 sm:mb-16">
+          <span className="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold mb-3 sm:mb-4 block">Visual Excellence</span>
+          <h1 className="text-3xl sm:text-5xl font-serif text-brand-dark mb-4 sm:mb-6 tracking-tight">Curated Showcase</h1>
+          <p className="text-brand-dark/50 max-w-xl mx-auto text-sm font-light mb-8 sm:mb-10">
             A selection of our most intricate nail art and transformative lash sets, handpicked to inspire your next look.
           </p>
-          <div className="flex flex-wrap justify-center gap-8 border-y border-brand-accent/30 py-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-8 border-y border-brand-accent/30 py-4 sm:py-6">
              {types.map(t => (
-               <button 
+               <button
                 key={t}
                 onClick={() => setFilter(t)}
                 className={`text-[10px] uppercase tracking-[0.25em] font-bold transition-all duration-300 ${filter === t ? 'text-brand-gold scale-110' : 'text-brand-dark/40 hover:text-brand-dark'}`}
@@ -79,7 +79,7 @@ const Gallery: React.FC = () => {
           </div>
         </header>
 
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8 mb-32">
+        <div className="columns-1 md:columns-2 lg:columns-3 gap-4 sm:gap-8 space-y-4 sm:space-y-8 mb-16 sm:mb-32">
           {filtered.map((img) => (
             <div key={img.id} className="relative group overflow-hidden break-inside-avoid shadow-2xl bg-white p-3 hover-lift">
               <div className="relative overflow-hidden aspect-[4/5]">
@@ -99,24 +99,24 @@ const Gallery: React.FC = () => {
         </div>
 
         {/* Instagram Feed Integration */}
-        <section className="mt-32 border-t border-brand-accent/20 pt-24">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12 text-center md:text-left">
+        <section className="mt-16 sm:mt-32 border-t border-brand-accent/20 pt-12 sm:pt-24">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8 sm:mb-12 text-center md:text-left gap-4">
             <div>
-               <div className="flex items-center justify-center md:justify-start gap-4 mb-2">
-                 <svg className="w-6 h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
+               <div className="flex items-center justify-center md:justify-start gap-3 sm:gap-4 mb-2">
+                 <svg className="w-5 h-5 sm:w-6 sm:h-6 text-brand-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5">
                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path>
                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                  </svg>
                  <span className="text-brand-gold uppercase tracking-[0.3em] text-xs font-bold">@saigonstarss</span>
                </div>
-               <h2 className="text-4xl font-serif text-brand-dark">Live on Instagram</h2>
+               <h2 className="text-3xl sm:text-4xl font-serif text-brand-dark">Live on Instagram</h2>
             </div>
-            <a 
-              href="https://www.instagram.com/saigonstarss/" 
-              target="_blank" 
-              rel="noreferrer" 
-              className="mt-6 md:mt-0 inline-block bg-brand-dark text-white px-10 py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-brand-gold transition-all duration-300"
+            <a
+              href="https://www.instagram.com/saigonstarss/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-block bg-brand-dark text-white px-8 sm:px-10 py-3 sm:py-4 text-[10px] uppercase tracking-widest font-bold hover:bg-brand-gold transition-all duration-300"
             >
               Follow Us
             </a>
