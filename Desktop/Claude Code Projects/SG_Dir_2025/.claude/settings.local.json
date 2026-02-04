@@ -6,7 +6,13 @@
       "Bash(cd:*)",
       "Bash(git rm --cached -r ../ecompics/)",
       "Bash(git commit -m \"Remove scope contamination: parent ecompics directory files no longer tracked\")",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit -m \"Initial SG_Dir_2025 Singapore Halal Directory project structure with documentation and configuration\")",
+      "Bash(git push:*)",
+      "Bash(git remote set-url:*)",
+      "Bash(git checkout:*)",
+      "Bash(git commit:*)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": []
